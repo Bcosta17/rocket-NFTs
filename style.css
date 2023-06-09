@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+  color: var(--text-color);
+  list-style: none;
+  text-decoration: none;
 }
 
 :root {
@@ -15,3 +18,95 @@
   --black-text: #000;
   --color-input: #0D0D0D;
 }
+
+body {
+  background-color: var(--body-background);
+}
+
+/* =========== Section main ===========*/
+.section-main {
+  background-image:url('./assets/background.png');
+  background-size: cover;
+  height: 100rem;
+  padding: 5.7rem 8.2rem;
+}
+
+.section-main nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-main nav ul {
+  display: flex;
+  gap: 0 6rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.section-main nav button {
+  color: #000;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0 1.5rem;
+  padding: 1rem 1.4rem;
+}
+
+.section-main main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 9.8rem;
+}
+
+.section-main main div {
+  width: 40.1rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.section-main main div figure {
+  display: flex;
+  align-items: flex-end;
+  gap: 0 .4rem;
+  margin-top: 5.5rem;
+}
+
+.section-main main h1 {
+  width: 59.6rem;
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.section-main main h1 span {
+  color: var(--color-logo);
+  font-weight: 400;
+}
+
+.section-main .gallery ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 4.2rem 0;
+  margin-top: 10rem;
+}
+
+.section-main .gallery ul li img {
+  width: 36rem;
+  height: 20rem;
+  border: #fff solid 1px;
+}
+
+/* =========== Section information ===========*/
+.section-information {
+ 
+}
+
+/* =========== ===========*/
+
+/* =========== ===========*/
+
+/* =========== ===========*/
+
+/* =========== ===========*/
