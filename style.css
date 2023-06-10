@@ -5,7 +5,7 @@
   font-family: 'Montserrat', sans-serif;
   color: var(--text-color);
   list-style: none;
-  text-decoration: none;
+  
 }
 
 :root {
@@ -19,6 +19,16 @@
   --color-input: #0D0D0D;
 }
 
+span {
+  color: var(--color-logo);
+  font-weight: 400;
+}
+
+h1,h2 {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
 body {
   background-color: var(--body-background);
 }
@@ -29,6 +39,7 @@ body {
   background-size: cover;
   height: 100rem;
   padding: 5.7rem 8.2rem;
+  
 }
 
 .section-main nav {
@@ -62,7 +73,7 @@ body {
 }
 
 .section-main main div {
-  width: 40.1rem;
+  width: 36.9rem;
   font-size: 1.8rem;
   font-weight: 400;
 }
@@ -76,13 +87,6 @@ body {
 
 .section-main main h1 {
   width: 59.6rem;
-  font-size: 5rem;
-  font-weight: 700;
-}
-
-.section-main main h1 span {
-  color: var(--color-logo);
-  font-weight: 400;
 }
 
 .section-main .gallery ul {
@@ -100,10 +104,137 @@ body {
 
 /* =========== Section information ===========*/
 .section-information {
+  width: 100%;
+  height: 66rem;
+  display: grid;
+  grid-template-areas: 
+   "numbers texts"
+   "numbers banner"
+  ;
+  grid-template-columns: 30rem 1fr;
+  grid-template-rows: 35.5rem 1fr;
+}
+
+.section-information .numbers {
+  grid-area: numbers;
+  border-right: solid 1px var(--subtitle-color);
+  border-bottom: solid 1px var(--subtitle-color);
  
 }
 
-/* =========== ===========*/
+.section-information .numbers ul{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7rem 0;
+}
+
+.section-information .numbers ul li p:first-child {
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+.section-information .numbers ul li p:last-child {
+  text-align: center;
+  color: var(--subtitle-color);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.section-information .texts {
+  grid-area: texts;
+  
+  display: flex;
+  justify-content: center;
+  
+  padding: 7rem 6.8rem;
+  gap: 0 15.6rem;
+}
+
+.section-information .texts .text {
+  font-size: 1.8rem;
+  width: 43.5rem;
+  text-align: justify;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.texts .text span a {
+  color: var(--color-logo);
+}
+
+
+.section-information .banner {
+  grid-area: banner;
+  overflow: hidden;
+}
+
+
+
+.section-information .banner img {
+  width: 100%;
+}
+/* =========== Section populars===========*/
+.section-populars {
+  padding: 15rem 8.7rem 13.3rem;
+}
+
+.section-populars h2{
+  margin-bottom: 15rem;
+}
+
+.section-populars .gallery-populars{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+
+.section-populars .gallery-populars li:nth-child(odd) { 
+  border-right: solid 1px var(--subtitle-color);
+}
+
+.section-populars .gallery-populars li:nth-child(even) { 
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.section-populars .gallery-populars li h3 {
+  font-size: 3rem;
+  font-weight: 500;
+  width: 40rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-populars .gallery-populars li .name-price {
+  width: 40rem;
+  display: flex;
+  justify-content: space-between;
+  
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 4.4rem 0 2.6rem 0;
+}
+
+.name-price p:first-child {
+  color: var(--subtitle-color);
+}
+
+.name-price p:last-child {
+  color: var(--color-logo);
+  font-weight: 400;
+  
+}
+
+.section-populars .gallery-populars li> img {
+  width: 40rem;
+}
 
 /* =========== ===========*/
 
