@@ -35,17 +35,20 @@ body {
 
 /* =========== Section main ===========*/
 .section-main {
+  position: relative;
   background-image:url('./assets/background.png');
   background-size: cover;
+  width: 100%;
+  
   height: 100rem;
   padding: 5.7rem 8.2rem;
-  
 }
 
 .section-main nav {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .section-main nav ul {
@@ -53,6 +56,10 @@ body {
   gap: 0 6rem;
   font-size: 1.8rem;
   font-weight: 400;
+}
+
+.section-main nav ul li a {
+  text-decoration: none;
 }
 
 .section-main nav button {
@@ -176,7 +183,7 @@ body {
   width: 100%;
 }
 
-/* =========== Section populars===========*/
+/* =========== Section populars ===========*/
 .section-populars {
   padding: 15rem 8.7rem 13.3rem;
 }
@@ -189,6 +196,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   
+}
+
+.gallery-populars li a {
+  text-decoration: none;
 }
 
 .gallery-populars li:nth-child(odd) { 
@@ -253,6 +264,8 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 14rem;
   margin-top: 12rem;
+  margin-bottom: 6rem;
+  
 }
 
 .gallery-artists li {
@@ -282,19 +295,18 @@ body {
   background-color: var(--color-logo);
 }
 
-.section-artists footer p {
+.section-artists footer a {
   font-size: 2rem;
-  margin-top: 6rem;
+  cursor: pointer;
 
 }
 
-.section-artists footer p span {
+.section-artists footer a span {
   margin-left: 4.3rem;
 }
 
 /* =========== Footer ===========*/
 body > footer {
-  
   background-color: var(--card-color);
   height: 60.9rem;
 
@@ -317,12 +329,15 @@ footer > header {
   padding: 0 8.4rem;
 }
 
-footer > header > button {
+footer > header > a {
   width: 6rem;
   height: 6rem;
   background-color: var(--color-logo);
   border: none;
-  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 footer > aside {
@@ -362,6 +377,7 @@ footer > aside > form button {
   color: #000;
   font-size: 2rem;
   font-weight: 700;
+  border: none;
 }
 
 footer > main {
@@ -409,8 +425,73 @@ footer > footer a {
 
 /* =========== Animations ===========*/
 
+.section-main {
+  opacity: 0; 
+  animation: fade-in 1s forwards; 
+}
+
+.section-information {
+
+  opacity: 0;
+  animation: fade-in 1s 1s forwards;
+}
+
+.section-populars {
+
+  opacity: 0;
+  animation: fade-in 1s 2s forwards;
+}
+
+.section-artists {
+
+  opacity: 0;
+  animation: fade-in 1s 3s forwards;
+}
+
+footer {
+
+  opacity: 0;
+  animation: fade-in 1s 4s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.section-main nav {
+  
+  opacity: 0; 
+  animation: slide-in-left 1s forwards; 
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.section-main main {
+  opacity: 0; 
+  animation: fade-in 1s 0.5s forwards; 
+}
+
+.section-main .gallery {
+  opacity: 0; 
+  animation: fade-in 1s 1s forwards; 
+}
+
 /* seta movendo pra cima */
-button:hover img[src*="arrow-black"] {
+a:hover img[src*="arrow-black"] {
   animation: moveUp 0.5s infinite;
 }
 
@@ -427,7 +508,7 @@ button:hover img[src*="arrow-black"] {
 }
 
 /* Seta movendo na diagonal */
-img[src*="arrow-orange"]:hover ,img[src*="arrow-white"]:hover {
+.section-artists a:hover img[src*="arrow-orange"] ,.section-populars a:hover img[src*="arrow-white"] {
   animation: moveDiagonal 0.5s infinite;
 }
 
