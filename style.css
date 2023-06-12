@@ -40,7 +40,7 @@ body {
   background-size: cover;
   width: 100%;
   
-  height: 100rem;
+  height: auto;
   padding: 5.7rem 8.2rem;
 }
 
@@ -73,7 +73,9 @@ body {
 }
 
 .section-main main {
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 9.8rem;
@@ -98,8 +100,8 @@ body {
 
 .section-main .gallery ul {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 4.2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4.2rem 10px;
   margin-top: 10rem;
 }
 
@@ -420,9 +422,39 @@ footer > footer a {
   gap: 0 5rem;
 }
 
-/* =========== ===========*/
+/* =========== responsive ===========*/
+/* 1330 */
+@media(max-width: 1330px){
+  .section-main main h1 {
+    width: 35%;
+    font-size: 4.5rem;
+  }
+}
+
+@media(max-width: 1200px) {
+  .section-main main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
 
+  .section-main main h1, .section-main main div{
+    width: 100%;
+  }
+  .section-main main div figure {
+    order: 1;
+    border: solid green;
+  }
+  .section-main main .badge, .section-main main div figure {
+    display: none;
+  }
+
+  .section-main {
+    border: red;
+    align-items: center;
+  }
+}
 /* =========== Animations ===========*/
 
 .section-main {
