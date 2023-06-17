@@ -33,6 +33,7 @@ body {
   background-color: var(--body-background);
 }
 
+
 /* =========== Section main ===========*/
 .section-main {
   position: relative;
@@ -41,7 +42,7 @@ body {
   width: 100%;
   
   height: auto;
-  padding: 5.7rem 8.2rem;
+  padding: 5.7rem 8.2rem 0;
 }
 
 .section-main nav {
@@ -70,6 +71,16 @@ body {
   align-items: center;
   gap: 0 1.5rem;
   padding: 1rem 1.4rem;
+  cursor: pointer;
+}
+
+.button-menu{
+  border: none;
+  background: none;
+}
+
+.button-menu i {
+  font-size: 35px;
 }
 
 .section-main main {
@@ -101,13 +112,13 @@ body {
 .section-main .gallery ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 4.2rem 10px;
+  gap: 4.2rem 2rem;
   margin-top: 10rem;
 }
 
 .section-main .gallery ul li img {
-  width: 32rem;
-  height: 20rem;
+  width: 100%;
+  
   border: #fff solid 1px;
 }
 
@@ -164,7 +175,7 @@ body {
 
 .section-information .texts .text {
   font-size: 1.8rem;
-  width: 43.5rem;
+  
   text-align: justify;
 
   display: flex;
@@ -183,6 +194,7 @@ body {
 
 .section-information .banner img {
   width: 100%;
+  height: 100%;
 }
 
 /* =========== Section populars ===========*/
@@ -208,14 +220,14 @@ body {
   border-right: solid 1px var(--subtitle-color);
 }
 
-.gallery-populars li:nth-child(odd) h3 { 
-  margin-top: 5rem;
-}
-
 .gallery-populars li:nth-child(even) { 
   display: flex;
   flex-direction: column;
   align-items: end;
+}
+
+.gallery-populars li:nth-of-type(n+3) h3 {
+  margin-top: 5rem;
 }
 
 .gallery-populars li h3 {
@@ -248,26 +260,30 @@ body {
   
 }
 
-.section-populars .gallery-populars li> img {
+.section-populars .gallery-populars li a> img {
   width: 40rem;
 }
 
 /* =========== Section artists ===========*/
 
 .section-artists {
-  padding: 0 8.3rem 14.7rem;
+  padding-bottom: 14.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .gallery-artists {
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 14rem;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 4.2rem 1rem;
+  
   margin-top: 12rem;
   margin-bottom: 6rem;
-  
+  justify-items: center;
+  align-items: center;
 }
 
 .gallery-artists li {
@@ -276,6 +292,7 @@ body {
   
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0 4rem;
   padding: 4rem;
 }
@@ -311,7 +328,7 @@ body {
 body > footer {
   background-color: var(--card-color);
   height: 60.9rem;
-
+  width: 100%;
   display: grid;
   grid-template-areas: 
   "header header"
@@ -389,13 +406,16 @@ footer > main {
   border-left: none;
   border-right: none;
 
-  padding: 6.7rem 12rem;
+  padding: 6.7rem 1rem;
 }
 
 table{
   font-size:2rem;
   border-spacing: 11rem 1.5rem;
   text-align: left;
+
+  display: flex;
+  justify-content: center;
   
 }
 
@@ -423,38 +443,169 @@ footer > footer a {
 }
 
 /* =========== responsive ===========*/
-/* 1330 */
-@media(max-width: 1330px){
-  .section-main main h1 {
-    width: 35%;
-    font-size: 4.5rem;
+
+/* ============= 1400 =============*/
+@media(max-width: 1400px){
+  :root{
+    font-size: 55%;
+  }
+
+  body {
+    width: 100%;
+  }
+
+  .section-main .gallery ul{
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .gallery-artists {
+    gap: 5rem;
+  }
+
+  .section-artists .gallery-artists {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  }
+  
+}
+
+/* ============= 1255 =============*/
+
+@media(max-width: 1255px) {
+  :root {
+    font-size: 50%;
+  }
+
+  .section-artists .gallery-artists {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+}
+
+/* ============= 1200 =============*/
+
+@media(max-width: 1200px) {
+  .section-main .gallery ul{
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .section-artists .gallery-artists {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+}
+
+/* ============= 1155 =============*/
+@media(max-width: 1155px) {
+  :root {
+    font-size: 45%;
+  }
+
+  .badge {
+    width: 170px;
+  }
+
+  .section-artists .gallery-artists {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
-@media(max-width: 1200px) {
-  .section-main main {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+/* ============= 1060 =============*/
+@media(max-width: 1060px) {
+  .section-main main h1 {
+    line-height: 1.5;
+  }
+  
+  .section-main .gallery ul{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* ============= 1030 =============*/
+@media(max-width: 1030px) {
+  :root{
+    font-size: 40%;
   }
 
+  .section-artists .gallery-artists li {
+    padding: 1rem;
+  }
 
-  .section-main main h1, .section-main main div{
-    width: 100%;
-  }
-  .section-main main div figure {
-    order: 1;
-    border: solid green;
-  }
-  .section-main main .badge, .section-main main div figure {
+}
+
+/* ============= 985 =============*/
+@media(max-width: 985px) {
+  .section-main nav ul, .section-main nav button:first-of-type{
     display: none;
   }
 
-  .section-main {
-    border: red;
-    align-items: center;
+  .section-main main {
+    position: relative;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .section-main main div {
+    width: 80%;
+    font-size: 3rem;
+    font-weight: 400;
+    
+    display: flex;
+    flex-direction: column;
+    order: 2;    
+  }
+
+  .section-main main div p {
+    margin-right:2rem;
+  }
+
+  .section-main main h1 {
+    width: 100%;
+    font-size: 9rem;
+    margin: 5rem 0;
+    order: 1;
+
+  }
+
+  .badge {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+ 
+  }
+  .section-artists .gallery-artists {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+}
+
+/* ============= 800 =============*/
+@media(max-width:830px) {
+  .section-main main h1 {
+    line-height: 1;
+    font-size: 7rem;
+  }
+  .section-main main p, figure {
+    font-size: 2.5rem;
+  }
+  
+  table {
+    border-spacing: 5.5rem 1.5rem;
+  }
+
+  .badge {
+    width: 150px;
   }
 }
+
+/* ============= 780 =============*/
+@media(max-width:700px) {
+  body > footer {
+    border: solid green;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 /* =========== Animations ===========*/
 
 .section-main {
