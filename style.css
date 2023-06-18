@@ -175,9 +175,6 @@ body {
 
 .section-information .texts .text {
   font-size: 1.8rem;
-  
-  text-align: justify;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -572,6 +569,7 @@ footer > footer a {
     bottom: 0;
  
   }
+
   .section-artists .gallery-artists {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
@@ -600,10 +598,6 @@ footer > footer a {
 /* ============= 700 =============*/
 @media(max-width:700px) {
 
-  /* .section-main .gallery ul{
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  } */
-
   .section-information {
     display: flex;
     flex-direction: column;
@@ -631,18 +625,10 @@ footer > footer a {
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
 
-  .gallery-populars li:nth-child(odd),
-  .gallery-populars li:nth-child(even),
-  .gallery-populars li:nth-of-type(n+3) h3 {
-    /* Remover os estilos */
-    border-right: none;
-    display: block;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 0;
+  .section-populars .gallery-populars li {
+    border-right:none;
   }
 
   .section-populars .gallery-populars li a {
@@ -654,6 +640,28 @@ footer > footer a {
   .gallery-populars li a h3,.gallery-populars li .name-price, .gallery-populars li a > img {
     width: 100%;
   }
+
+  .gallery-populars li > h3 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+  }
+
+
+  .section-information {
+    height: auto;
+  }
+  
+  .section-information .texts .text {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  
+  }
+  
+  .section-information .texts .text a {
+    margin-top: 5rem;
+  }
+
   body > footer {
     height: 100%;
     display: flex;
@@ -681,7 +689,7 @@ footer > footer a {
   }
 
   table {
-    border-spacing: 15.5rem 2.5rem;
+    border-spacing: 11.5rem 2.5rem;
   }
 
   footer > footer {
@@ -689,8 +697,66 @@ footer > footer a {
   }
 }
 
-/* =========== Animations ===========*/
+@media(max-width:600px) {
+  .section-main nav img {
+    width: 30rem;
+  }
 
+  .button-menu i,.section-main main h1 {
+    font-size: 5rem;
+  }
+
+  .section-main main p, figure {
+    font-size: 2rem;
+  }
+
+  .badge {
+    width: 15rem;
+  }
+  
+  h2, .section-information .numbers ul li p:first-child {
+    font-size: 6rem;
+  }
+
+  .section-main .gallery ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-artists .gallery-artists {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .section-artists .gallery-artists li {
+    width: 60%;
+  }
+  
+  footer > footer img {
+    width: 20px;
+  }
+}
+
+@media(max-width:500px) {
+
+  .section-main .gallery ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-artists .gallery-artists {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .section-artists .gallery-artists li {
+    width: 60%;
+  }
+}
+/* =========== Animations ===========*/
+/* 
 .section-main {
   opacity: 0; 
   animation: fade-in 1s forwards; 
@@ -754,7 +820,7 @@ footer {
 .section-main .gallery {
   opacity: 0; 
   animation: fade-in 1s 1s forwards; 
-}
+} */
 
 /* seta movendo pra cima */
 a:hover img[src*="arrow-black"] {
