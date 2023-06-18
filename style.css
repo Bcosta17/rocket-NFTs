@@ -63,7 +63,7 @@ body {
   text-decoration: none;
 }
 
-.section-main nav button {
+.section-main nav button:has(span) {
   color: #000;
   font-size: 1.6rem;
   font-weight: 700;
@@ -74,14 +74,18 @@ body {
   cursor: pointer;
 }
 
-.button-menu{
+.button-menu {
   border: none;
   background: none;
+  display: none;
+  cursor: pointer;
 }
+
 
 .button-menu i {
   font-size: 35px;
 }
+
 
 .section-main main {
   width: 100%;
@@ -531,8 +535,16 @@ footer > footer a {
 
 /* ============= 985 =============*/
 @media(max-width: 985px) {
+  .section-main {
+    background-position: 50% 75%;
+  }
+
   .section-main nav ul, .section-main nav button:first-of-type{
     display: none;
+  }
+
+  .button-menu {
+    display: block;
   }
 
   .section-main main {
@@ -697,7 +709,13 @@ footer > footer a {
   }
 }
 
+/* ============= 600 =============*/
+
 @media(max-width:600px) {
+  .section-main {
+    padding: 5.7rem 5rem;
+  }
+
   .section-main nav img {
     width: 30rem;
   }
@@ -710,18 +728,26 @@ footer > footer a {
     font-size: 2rem;
   }
 
+  figure img, body > footer > header > img {
+    width: 20rem;
+  }
+
   .badge {
     width: 15rem;
   }
   
+  .section-main .gallery ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   h2, .section-information .numbers ul li p:first-child {
     font-size: 6rem;
   }
 
-  .section-main .gallery ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .section-information .texts {
+    gap: 0 7rem;
   }
 
   .section-artists .gallery-artists {
@@ -729,61 +755,110 @@ footer > footer a {
     flex-direction: column;
     width: 100%;
   }
+
+  .section-artists .gallery-artists li {
+    width: 60%;
+  }
+
+  .gallery-artists li img {
+    width: 10rem;
+  }
+
+  footer > aside > h3 {
+    font-size: 2.5rem;
+  }
+
+  footer > footer {
+    padding: 3rem 4rem;
+  }
+
+  footer > footer img {
+    width: 3rem;
+  }
+}
+
+/* ============= 500 =============*/
+
+@media(max-width:500px) {
+  .section-main {
+    padding: 5.7rem 3rem;
+  }
+
+  .badge {
+    width: 12rem;
+  }
+
+  .section-main  nav img {
+    width: 20rem;
+  } 
+
+  .section-main .gallery ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-information .numbers ul {
+    gap: 8rem;
+  }
+
+  .section-information .texts {
+    padding: 4rem 2rem;
+  }
+
+  .section-information .texts .text {
+    font-size: 1.8rem;
+  }
+
+  .section-artists .gallery-artists {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
   .section-artists .gallery-artists li {
     width: 60%;
   }
   
-  footer > footer img {
-    width: 20px;
-  }
-}
-
-@media(max-width:500px) {
-
-  .section-main .gallery ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .section-main main h1, h2,.button-menu i, .section-information .numbers ul li p:first-child {
+    font-size: 4.5rem;
   }
 
-  .section-artists .gallery-artists {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  table {
+    border-spacing: 6rem 2.5rem;
   }
-  .section-artists .gallery-artists li {
-    width: 60%;
+/* ============= 400 =============*/
+ @media(max-width:400px) {
+  :root {
+    font-size: 35%;
   }
+ }
 }
 /* =========== Animations ===========*/
-/* 
+
 .section-main {
   opacity: 0; 
   animation: fade-in 1s forwards; 
 }
 
 .section-information {
-
   opacity: 0;
   animation: fade-in 1s 1s forwards;
 }
 
 .section-populars {
+  opacity: 0;
+  animation: fade-in 1s 1.5s forwards;
+}
 
+.section-artists {
   opacity: 0;
   animation: fade-in 1s 2s forwards;
 }
 
-.section-artists {
-
-  opacity: 0;
-  animation: fade-in 1s 3s forwards;
-}
-
 footer {
-
   opacity: 0;
-  animation: fade-in 1s 4s forwards;
+  animation: fade-in 1s 2.5s forwards;
 }
 
 @keyframes fade-in {
@@ -820,7 +895,7 @@ footer {
 .section-main .gallery {
   opacity: 0; 
   animation: fade-in 1s 1s forwards; 
-} */
+}
 
 /* seta movendo pra cima */
 a:hover img[src*="arrow-black"] {
@@ -854,4 +929,14 @@ a:hover img[src*="arrow-black"] {
   100% {
     transform: translate(0, 0);
   }
+}
+
+/* animação do botão */
+
+button {
+  transition: transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
