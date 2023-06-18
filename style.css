@@ -260,7 +260,7 @@ body {
   
 }
 
-.section-populars .gallery-populars li a> img {
+.gallery-populars li a > img {
   width: 40rem;
 }
 
@@ -578,7 +578,7 @@ footer > footer a {
   
 }
 
-/* ============= 800 =============*/
+/* ============= 830 =============*/
 @media(max-width:830px) {
   .section-main main h1 {
     line-height: 1;
@@ -597,12 +597,95 @@ footer > footer a {
   }
 }
 
-/* ============= 780 =============*/
+/* ============= 700 =============*/
 @media(max-width:700px) {
-  body > footer {
-    border: solid green;
+
+  /* .section-main .gallery ul{
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  } */
+
+  .section-information {
     display: flex;
     flex-direction: column;
+    margin-top: 10rem;
+    
+  }
+
+  .section-information .numbers ul{
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+  }
+
+  .section-information .numbers ul li p:first-child {
+    margin-bottom: 3rem;
+    font-size: 8rem;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 8rem;
+  }
+
+  .section-populars .gallery-populars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .gallery-populars li:nth-child(odd),
+  .gallery-populars li:nth-child(even),
+  .gallery-populars li:nth-of-type(n+3) h3 {
+    /* Remover os estilos */
+    border-right: none;
+    display: block;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .section-populars .gallery-populars li a {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+  
+  .gallery-populars li a h3,.gallery-populars li .name-price, .gallery-populars li a > img {
+    width: 100%;
+  }
+  body > footer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body > footer > header {
+    padding: 4rem;
+  }
+  body > footer > header > img {
+    width: 30rem;
+  }
+
+  body > footer > aside {
+    padding: 4rem;
+  }
+
+  footer > aside > form input {
+    width: 40rem;
+    padding: 2rem;
+  }
+
+  footer > main {
+    padding: 2rem;
+  }
+
+  table {
+    border-spacing: 15.5rem 2.5rem;
+  }
+
+  footer > footer {
+    padding: 3rem 8.4rem;
   }
 }
 
